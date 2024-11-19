@@ -18,17 +18,20 @@ from django.contrib import admin
 from django.urls import path,include
 
 from company import views
+from company.views import resume_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',views.home, name="index"),
-    path('/about/', views.about, name='about'),
-    path('/contact/', views.contact, name='contact'),
-    path('/services/', views.services, name='services'),
-    path('/portfolio/', views.portfolio, name='portfolio'),
-    path('/portfolio_details/', views.portfolio_details, name='portfolio_details'),
-    path('resume', views.resume, name='resume'),
+    path('', views.home_view, name='index'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact_view, name='contact'),
+    path('services/', views.services, name='services'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('portfolio_details/', views.portfolio_details, name='portfolio_details'),
+    # path('resume', views.resume, name='resume'),
+   path('resume',views.resume_view, name='resume'),
+
 ]
 
 
